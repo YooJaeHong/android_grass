@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mygrass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TabHost
+            android:id="@+id/taphost_mygrass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/내잔디밭"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <Button
+                                android:id="@+id/left_btn"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center">
+
+                            </Button>
+
+                            <TextView
+                                android:id="@+id/selected_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="2020년 01월"
+                                android:textSize="30dp">
+
+                            </TextView>
+
+                            <Button
+                                android:id="@+id/right_btn"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center">
+
+                            </Button>
+                        </LinearLayout>
+
+
+                        <HorizontalScrollView
+                            android:id="@+id/내잔디밭_scrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="10dp">
+
+                                <TableRow>
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <View
+                                        android:id="@+id/col1row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row1"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row1"
+                                        style="@style/grass_box_wrap" />
+
+                                </TableRow>
+
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row2"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row2"
+                                        style="@style/grass_box_wrap" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row3"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row3"
+                                        style="@style/grass_box_wrap" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row4"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row4"
+                                        style="@style/grass_box_wrap" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row5"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row5"
+                                        style="@style/grass_box_wrap" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row6"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row6"
+                                        style="@style/grass_box_wrap" />
+
+                                </TableRow>
+
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/col1row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col2row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col3row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col4row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col5row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col6row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col7row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col8row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col9row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col10row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col11row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col12row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col13row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col14row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col15row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col16row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col17row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col18row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col19row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col20row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col21row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col22row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col23row7"
+                                        style="@style/grass_box_wrap" />
+
+                                    <View
+                                        android:id="@+id/col24row7"
+                                        style="@style/grass_box_wrap" />
+                                </TableRow>
+
+
+
+                            </TableLayout>
+                        </HorizontalScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/팀잔디밭"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" />
+                        </HorizontalScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/새로운잔디밭"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" />
+                        </HorizontalScrollView>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

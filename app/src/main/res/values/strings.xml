@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">git_grass_reader</string>
+    <string name="내잔디밭">내잔디밭</string>
+    <string name="팀잔디밭">팀잔디밭</string>
+    <string name="새로운잔디밭">새로운잔디밭</string>
+</resources>
