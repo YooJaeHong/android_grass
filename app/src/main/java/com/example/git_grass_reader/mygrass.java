@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -24,14 +27,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
 public class mygrass extends AppCompatActivity {
-    int col_num = 1;
-    List<String> all_date = new ArrayList<>();
-    List<String> all_colors = new ArrayList<>();
+    int col_num = 6;
+    LinkedList<String> all_date = new LinkedList<>();
+    LinkedList<String> all_colors = new LinkedList<>();
     private String github_id = "YooJaehong";
     private String htmlPageUrl = "https://github.com/" + github_id;
 
@@ -42,10 +46,12 @@ public class mygrass extends AppCompatActivity {
 
     SimpleDateFormat git_hub_time_formatter = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월");
+    SimpleDateFormat day_only = new SimpleDateFormat("dd");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mygrass);
+
 
 
         final TextView top_date = (TextView)findViewById(R.id.selected_date);
@@ -73,12 +79,13 @@ public class mygrass extends AppCompatActivity {
 
         //상단 스크롤바 버튼
         //col 주소를 tv에 저장
-       final View[] tv = new View[25];
-        for(int i=1;i<=24;i++){
+       final FrameLayout[] tv = new FrameLayout[25];
+        for(int i=1;i<=6;i++){
+            int col_num = i*4-2;
 
             try {
-                int id = R.id.class.getField("col"+i+"row1").getInt(0);
-                tv[i] = (View)findViewById(id);
+                int id = R.id.class.getField("col"+col_num+"row1_background_Frame").getInt(0);
+                tv[i] = (FrameLayout)findViewById(id);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (NoSuchFieldException e) {
@@ -87,50 +94,69 @@ public class mygrass extends AppCompatActivity {
 
         }
         //버튼조작
+
         Button left_btn = (Button)findViewById(R.id.left_btn);
         Button right_btn = (Button)findViewById(R.id.right_btn);
-        final HorizontalScrollView horizontalScrollView= (HorizontalScrollView)findViewById(R.id.내잔디밭_scrollView);
 
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+
+        int display_width = display.widthPixels;
+
+        final HorizontalScrollView horizontalScrollView= (HorizontalScrollView)findViewById(R.id.내잔디밭_scrollView);
+        horizontalScrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                horizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            }
+        });
+        final int halfScreenWidth = (int)(display_width*0.5f);
+        Log.e("halfscreen = ",Integer.toString(halfScreenWidth));
+        Log.e("tv[col_num].getLeft",Integer.toString(tv[col_num].getLeft()));
         left_btn.setOnClickListener(new Button.OnClickListener(){
           public void onClick(View view){
               if(col_num>1){
                   col_num--;
+                  horizontalScrollView.smoothScrollTo(tv[col_num].getLeft() - halfScreenWidth,0);//스크롤이동
+
+
+                  //날짜변환
+                  try {
+                      Date original_date = formatter.parse(top_date.getText().toString());
+                      Calendar cal = Calendar.getInstance();
+                      cal.setTime(original_date);
+                      cal.add(Calendar.MONTH,-1);
+
+
+                      String scroll_starter_date = formatter.format(cal.getTime());
+                      top_date.setText(scroll_starter_date);
+                  } catch (ParseException e) {
+                      e.printStackTrace();
+                  }
               }
-              horizontalScrollView.smoothScrollTo(tv[col_num].getLeft(),0);//스크롤이동
-
-              //날짜변환
-              try {
-                  Date original_date = formatter.parse(top_date.getText().toString());
-                  Calendar cal = Calendar.getInstance();
-                  cal.setTime(original_date);
-                  cal.add(Calendar.MONTH,-1);
 
 
-                  String scroll_starter_date = formatter.format(cal.getTime());
-                  top_date.setText(scroll_starter_date);
-              } catch (ParseException e) {
-                  e.printStackTrace();
-              }
+
           }
         });
         right_btn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View view){
-                if(col_num<24){
+                if(col_num<6){
                     col_num++;
-                }
-                horizontalScrollView.smoothScrollTo(tv[col_num].getLeft(),0);//스크롤이동
-                try {
-                    Date original_date = formatter.parse(top_date.getText().toString());
-                    Calendar cal = Calendar.getInstance();
-                    cal.setTime(original_date);
-                    cal.add(Calendar.MONTH,1);
+                    horizontalScrollView.smoothScrollTo(tv[col_num].getLeft() - halfScreenWidth,0);//스크롤이동
+                    try {
+                        Date original_date = formatter.parse(top_date.getText().toString());
+                        Calendar cal = Calendar.getInstance();
+                        cal.setTime(original_date);
+                        cal.add(Calendar.MONTH,1);
 
 
-                    String scroll_starter_date = formatter.format(cal.getTime());
-                    top_date.setText(scroll_starter_date);
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                        String scroll_starter_date = formatter.format(cal.getTime());
+                        top_date.setText(scroll_starter_date);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
+
             }
         });
 
@@ -179,9 +205,11 @@ public class mygrass extends AppCompatActivity {
         }
 
         //파싱한 데이터로 초기 날짜 설정
+        Calendar cal = Calendar.getInstance();
+        Date original_date = null;
 
         try {
-            Date original_date = null;
+
             Log.e("num of date : ",Integer.toString(all_date.size()));
             Log.e("num of color : ",Integer.toString(all_colors.size()));
             /*for(int i=0;i<all_date.size();i++){
@@ -192,8 +220,12 @@ public class mygrass extends AppCompatActivity {
             }*/
             //출력값 로그
             if(all_date.size()!=0) {
-                original_date = git_hub_time_formatter.parse(all_date.get(0));
+                original_date = git_hub_time_formatter.parse(all_date.get(all_date.size()-1));
             }
+            //요일계산용 마지막 날짜 저장
+
+            cal.setTime(original_date);
+
 
             String scroll_starter_date = formatter.format(original_date);
             top_date.setText(scroll_starter_date);
@@ -202,10 +234,84 @@ public class mygrass extends AppCompatActivity {
         }
 
 
-
+        int week = cal.get(Calendar.DAY_OF_WEEK);
         //파싱한 데이터를 기반으로 색상변경
 
-        for(int i=1;i<=48;i++){
+        cal.add(Calendar.DATE,7-week);
+
+        for(int j=1;j<=7-week;j++){
+            try {
+
+                String day = day_only.format(cal.getTime());
+                int colrowid = R.id.class.getField("col24row"+(8-j)).getInt(0);
+                TextView colrow =(TextView)findViewById(colrowid);
+                colrow.setText(day);
+                cal.add(Calendar.DATE,-1);
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
+        //이번주 아직 안온날들 제외
+        boolean today = true;
+        for(int j=8-week;j<=7;j++){
+            String color_temp = all_colors.pollLast();
+
+
+
+            try {
+                Date selected_date = git_hub_time_formatter.parse(all_date.pollLast());
+                String day = day_only.format(selected_date);
+                int colrowid = R.id.class.getField("col24row"+(8-j)).getInt(0);
+
+                TextView colrow = (TextView)findViewById(colrowid);
+                colrow.setBackgroundColor(Color.parseColor(color_temp));
+                colrow.setText(day);
+                if(day.equals("01")){
+                    colrow.setTextColor(Color.RED);
+                }
+                if(today ==true){
+                    View border = (View)findViewById(colrowid).getParent();
+                    border.setBackgroundColor(Color.BLUE);
+                    today = false;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        //나머지요일
+        for(int i=2;i<=24;i++){
+            for(int j=1;j<=7;j++){
+                String color_temp = all_colors.pollLast();
+
+
+                try {
+                    Date selected_date = git_hub_time_formatter.parse(all_date.pollLast());
+                    String day = day_only.format(selected_date);
+                    int colrowid = R.id.class.getField("col"+(25-i)+"row"+(8-j)).getInt(0);
+                    TextView colrow = (TextView)findViewById(colrowid);
+                    colrow.setBackgroundColor(Color.parseColor(color_temp));
+                    colrow.setText(day);
+                    if(day.equals("01")){
+                        colrow.setTextColor(Color.RED);
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (NoSuchFieldException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        /*for(int i=1;i<=24;i++){
             for(int j=1;j<=7;j++){
                 //all_date.get(i);
                 String color_temp = all_colors.get((i-1)*7+j);
@@ -222,7 +328,7 @@ public class mygrass extends AppCompatActivity {
                 }
             }
 
-        }
+        }*/
 
 
 
