@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.git_grass_reader">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,8 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loadingActivity"></activity>
-        <activity android:name=".teamgrass"></activity>
+        <receiver
+            android:name=".toTeamgrass_receiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".invidual_teamgrass" />
+
+        <receiver
+            android:name=".Alarm_Reciver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".BackgroundAlarmService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".loadingActivity" />
         <activity android:name=".mygrass" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -21,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="background_service"></service>
     </application>
 
 </manifest>

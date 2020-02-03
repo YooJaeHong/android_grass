@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
+import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -76,6 +77,12 @@ public class mygrass extends AppCompatActivity {
         ts3.setContent(R.id.새로운잔디밭);
         ts3.setIndicator("새로운잔디밭");
         tabhost1.addTab(ts3);
+
+        teamgrass teamgrass_manager = new teamgrass();
+        teamgrass_manager.createlayout();
+
+
+
 
         //상단 스크롤바 버튼
         //col 주소를 tv에 저장
@@ -212,13 +219,7 @@ public class mygrass extends AppCompatActivity {
 
             Log.e("num of date : ",Integer.toString(all_date.size()));
             Log.e("num of color : ",Integer.toString(all_colors.size()));
-            /*for(int i=0;i<all_date.size();i++){
-                Log.e("date:",all_date.get(i));
-            }
-            for(int i=0;i<all_colors.size();i++){
-                Log.e("color:",all_colors.get(i));
-            }*/
-            //출력값 로그
+
             if(all_date.size()!=0) {
                 original_date = git_hub_time_formatter.parse(all_date.get(all_date.size()-1));
             }
@@ -311,24 +312,7 @@ public class mygrass extends AppCompatActivity {
             }
         }
 
-        /*for(int i=1;i<=24;i++){
-            for(int j=1;j<=7;j++){
-                //all_date.get(i);
-                String color_temp = all_colors.get((i-1)*7+j);
-                Log.e("colortemp:",color_temp);
 
-                try {
-                    int colrowid = R.id.class.getField("col"+i+"row"+j).getInt(0);
-                    View colrow = (View)findViewById(colrowid);
-                    colrow.setBackgroundColor(Color.parseColor(color_temp));
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (NoSuchFieldException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }*/
 
 
 
