@@ -21,6 +21,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.text.ParseException;
@@ -78,8 +79,8 @@ public class mygrass extends AppCompatActivity {
         ts3.setIndicator("새로운잔디밭");
         tabhost1.addTab(ts3);
 
-        teamgrass teamgrass_manager = new teamgrass();
-        teamgrass_manager.createlayout();
+        teamgrass teamgrass_manager = new teamgrass(this);
+
 
 
 
